@@ -1,7 +1,5 @@
+[![Build Status](https://travis-ci.org/timhourigan/gh-playground.svg?branch=master)](https://travis-ci.org/timhourigan/gh-playground)
+
 ### Playground
 
-Just a playground area to try different things in Github.
-
-| A   | Table |
-|:----|:------|
-| 123 | 456   |
+A Github playground area.
