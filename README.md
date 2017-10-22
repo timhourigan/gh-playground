@@ -3,11 +3,30 @@
 
 ### Playground
 
-A Github playground area.
+A playground repository for testing Github, [Travis CI](https://travis-ci.org) and [Coveralls](https://coveralls.io/).
 
-#### Continuous Integration
+#### Python Testing
 
-Useful links for pyTest, code coverage, Travis and Coveralls:
+The project contains a Python module (*read_travis.py*) with sample unit tests (*test_read_travis.py*), written using the  [pytest](https://docs.pytest.org/en/latest/) framework.
+
+Tests are executed by Travis CI, with code coverage reported using Coveralls.
+
+| File                | Content                                                                        |
+|:--------------------|:-------------------------------------------------------------------------------|
+| .coveragerc         | Contains a list of ignores (omits) for the code coverage check.                |
+| .gitignore          | git ignore. list                                                               |
+| .travis.yml         | Travis CI configuration.                                                       |
+| conftest.py         | Currently unused, could contain common test fixtures or imports.               |
+| LICENSE             | Repository license.                                                            |
+| read_travis.py      | Dummy Python module. Creates an object based on the contents of *.travis.yml*. |
+| README.md           | This file.                                                                     |
+| requirements.txt    | Python requirements file, containing a list of the needed Python packages.     |
+| setup.cfg           | Contains pytest default settings.                                              |
+| test_read_travis.py | Sample unit tests.                                                             |
+
+##### Continuous Integration
+
+Useful links for pytest, code coverage, Travis CI and Coveralls:
 
 * [Robin Andeer - How I test my code](http://www.robinandeer.com/blog/2016/06/22/how-i-test-my-code-part-3/)
 * [I Love Symposia - Continuous integration in Python](https://ilovesymposia.com/2014/10/01/continuous-integration-0-automated-tests-with-pytest/)
