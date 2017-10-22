@@ -14,7 +14,7 @@ Tests are executed by Travis CI, with code coverage reported using Coveralls.
 | File                | Content                                                                        |
 |:--------------------|:-------------------------------------------------------------------------------|
 | .coveragerc         | Contains a list of ignores (omits) for the code coverage check.                |
-| .gitignore          | git ignore. list                                                               |
+| .gitignore          | git ignore list.                                                               |
 | .travis.yml         | Travis CI configuration.                                                       |
 | conftest.py         | Currently unused, could contain common test fixtures or imports.               |
 | LICENSE             | Repository license.                                                            |
