@@ -16,7 +16,6 @@
 from __future__ import print_function
 import os
 import argparse
-# Standard logging format. Single logger for this module.
 import logging
 # Set logging level
 logging.basicConfig(format='%(asctime)s [%(levelname)s]\t: %(message)s',
