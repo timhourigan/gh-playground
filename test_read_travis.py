@@ -43,7 +43,3 @@ def empty_configuration():
 # Empty tests
 def test_language_empty(empty_configuration):
     assert empty_configuration.language == UNKNOWN
-
-
-def test_language_empty_expect_fail(empty_configuration):
-    assert empty_configuration.language == "Fail"
