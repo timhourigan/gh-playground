@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Non-standard modules
 try:
     import yaml
-except ImportError:
+except ImportError:  # pragma: no cover
     logger.error("This code requires the yaml module, which does not seem " +
                  "to be installed. You can install it with " +
                  "\"pip install PyYAML\"")
@@ -100,7 +100,10 @@ class Configuration(object):
         self.script = script
 
     def __repr__(self):
-        return 'Configuration({!r})'
+        return 'Configuration({!r} {!r} {!r} {!r})'.format(self.language,
+                                                           self.python,
+                                                           self.install,
+                                                           self.script)
 
     @property
     def language(self):
