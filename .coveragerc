@@ -1,2 +1,13 @@
 [run]
 omit = env_*, test_*, conftest.py
+
+[report]
+exclude_lines =
+    # Re-enable standard pragma
+    pragma: no cover
+
+    # Ignore import errors
+    except ImportError
+
+    # Ignore main
+    if __name__ == .__main__.:

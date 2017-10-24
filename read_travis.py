@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Non-standard modules
 try:
     import yaml
-except ImportError:  # pragma: no cover
+except ImportError:
     logger.error("This code requires the yaml module, which does not seem " +
                  "to be installed. You can install it with " +
                  "\"pip install PyYAML\"")
