@@ -5,5 +5,6 @@ install:
   - pip install -r requirements.txt
 script:
   - py.test
+  - flake8
 after_success:
   - coveralls

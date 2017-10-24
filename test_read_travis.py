@@ -21,7 +21,7 @@ UNKNOWN_LANGUAGE = 'Unknown'
 DEFAULT_LANGUAGE = 'python'
 DEFAULT_PYTHON_LIST = ['2.7']
 DEFAULT_INSTALL_LIST = ['pip install -r requirements.txt']
-DEFAULT_SCRIPT_LIST = ['py.test']
+DEFAULT_SCRIPT_LIST = ['py.test', 'flake8']
 
 BAD_CONFIGURATION_FILE = '.bad.yml'
 

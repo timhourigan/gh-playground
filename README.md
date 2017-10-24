@@ -7,9 +7,9 @@ A playground repository for testing Github, [Travis CI](https://travis-ci.org) a
 
 #### Python Testing
 
-The project contains a Python module (*read_travis.py*) with sample unit tests (*test_read_travis.py*), written using the  [pytest](https://docs.pytest.org/en/latest/) framework.
+The project contains a Python module (*read_travis.py*) with sample unit tests (*test_read_travis.py*), written using the [pytest](https://docs.pytest.org/en/latest/) framework.
 
-Tests are executed by Travis CI, with code coverage reported using Coveralls.
+The tests and [Flake8](https://flake8.readthedocs.io/en/latest/index.html) are executed by Travis CI, with code coverage reported using Coveralls.
 
 | File                | Content                                                                        |
 |:--------------------|:-------------------------------------------------------------------------------|
@@ -22,7 +22,7 @@ Tests are executed by Travis CI, with code coverage reported using Coveralls.
 | read_travis.py      | Dummy Python module. Creates an object based on the contents of *.travis.yml*. |
 | README.md           | This file.                                                                     |
 | requirements.txt    | Python requirements file, containing a list of the needed Python packages.     |
-| setup.cfg           | Contains pytest default settings.                                              |
+| setup.cfg           | Contains pytest and flake8 default settings.                                   |
 | test_read_travis.py | Sample unit tests.                                                             |
 
 ##### Continuous Integration
