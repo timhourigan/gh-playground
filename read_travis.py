@@ -100,10 +100,10 @@ class Configuration(object):
         self.script = script
 
     def __repr__(self):
-        return 'Configuration({!r} {!r} {!r} {!r})'.format(self.language,
-                                                           self.python,
-                                                           self.install,
-                                                           self.script)
+        return 'Configuration({!r}, {!r}, {!r}, {!r})'.format(self.language,
+                                                              self.python,
+                                                              self.install,
+                                                              self.script)
 
     @property
     def language(self):
