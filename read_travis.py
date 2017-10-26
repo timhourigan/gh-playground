@@ -111,6 +111,8 @@ class Configuration(object):
 
     @language.setter
     def language(self, l):
+        if not isinstance(l, str):
+            raise TypeError("language must be set to a string")
         self._language = l
 
     @property
@@ -119,6 +121,8 @@ class Configuration(object):
 
     @python.setter
     def python(self, p):
+        if not isinstance(p, list):
+            raise TypeError("python must be set to a list")
         self._python = p
 
     @property
@@ -127,6 +131,8 @@ class Configuration(object):
 
     @install.setter
     def install(self, i):
+        if not isinstance(i, list):
+            raise TypeError("install must be set to a list")
         self._install = i
 
     @property
@@ -135,6 +141,8 @@ class Configuration(object):
 
     @script.setter
     def script(self, s):
+        if not isinstance(s, list):
+            raise TypeError("script must be set to a list")
         self._script = s
 
 

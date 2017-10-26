@@ -25,6 +25,9 @@ DEFAULT_SCRIPT_LIST = ['py.test', 'flake8']
 
 BAD_CONFIGURATION_FILE = '.bad.yml'
 
+NOT_A_STRING = 12345
+NOT_A_LIST = "Not a list"
+
 ########################################################################
 #
 # Test Fixtures
@@ -105,3 +108,23 @@ def test_bad_configuration(bad_configuration):
     assert bad_configuration.python == list()
     assert bad_configuration.install == list()
     assert bad_configuration.script == list()
+
+
+def test_bad_language(default_configuration):
+    with pytest.raises(TypeError):
+        default_configuration.language = NOT_A_STRING
+
+
+def test_bad_python(default_configuration):
+    with pytest.raises(TypeError):
+        default_configuration.python = NOT_A_LIST
+
+
+def test_bad_install(default_configuration):
+    with pytest.raises(TypeError):
+        default_configuration.install = NOT_A_LIST
+
+
+def test_bad_script(default_configuration):
+    with pytest.raises(TypeError):
+        default_configuration.script = NOT_A_LIST
