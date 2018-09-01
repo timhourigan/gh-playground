@@ -1,5 +1,5 @@
 [run]
-omit = env_*, test_*, conftest.py
+omit = env*, test_*, conftest.py
 
 [report]
 exclude_lines =
