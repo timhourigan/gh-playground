@@ -25,7 +25,29 @@ The tests and [Flake8](https://flake8.readthedocs.io/en/latest/index.html) are e
 | setup.cfg           | Contains pytest and flake8 default settings.                                   |
 | test_read_travis.py | Sample unit tests.                                                             |
 
-##### Continuous Integration
+#### Usage - Virtualenv on Ubuntu/Debian
+
+```bash
+# Install virtualenv locally
+$ sudo apt-get install virtualenv
+
+# Create virtual environment
+$ virtualenv env
+
+# Activate virtual env
+$ source env/bin/activate
+
+# Install dependencies
+$ (env) pip install -r requirements.txt
+
+# Run tests and coverage locally
+$ make test
+
+# Exit virtual environment
+$ deactivate
+```
+
+#### Continuous Integration
 
 Useful links for pytest, code coverage, Travis CI and Coveralls:
 
