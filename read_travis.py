@@ -17,19 +17,14 @@ from __future__ import print_function
 import os
 import argparse
 import logging
+import yaml
+
 # Set logging level
-logging.basicConfig(format='%(asctime)s [%(levelname)s]\t: %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(
+    format="%(asctime)s [%(levelname)s]\t: %(message)s", level=logging.INFO
+)
 logger = logging.getLogger(__name__)
 
-# Non-standard modules
-try:
-    import yaml
-except ImportError:
-    logger.error("This code requires the yaml module, which does not seem " +
-                 "to be installed. You can install it with " +
-                 "\"pip install PyYAML\"")
-    exit()
 
 ########################################################################
 #
@@ -58,7 +53,6 @@ TRAVIS_FILENAME = ".travis.yml"
 
 
 class Configuration(object):
-
     @classmethod
     def import_cfg(cls, folder=os.getcwd(), filename=TRAVIS_FILENAME):
         """
@@ -76,17 +70,19 @@ class Configuration(object):
 
         try:
             with open(configFilename) as f:
-                configData = yaml.load(f)
+                configData = yaml.load(f, Loader=yaml.FullLoader)
         except IOError as e:
-            print("An issue occurred accessing {0} ({1})".format(configFilename,
-                                                                 e.strerror))
-            return cls(language="Unknown", python=list(),
-                       install=list(), script=list())
+            print(
+                "An issue occurred accessing {0} ({1})".format(
+                    configFilename, e.strerror
+                )
+            )
+            return cls(language="Unknown", python=list(), install=list(), script=list())
 
-        language = configData.get('language', 'Unknown')
-        python = configData.get('python', list())
-        install = configData.get('install', list())
-        script = configData.get('script', list())
+        language = configData.get("language", "Unknown")
+        python = configData.get("python", list())
+        install = configData.get("install", list())
+        script = configData.get("script", list())
 
         return cls(language, python, install, script)
 
@@ -100,10 +96,9 @@ class Configuration(object):
         self.script = script
 
     def __repr__(self):
-        return 'Configuration({!r}, {!r}, {!r}, {!r})'.format(self.language,
-                                                              self.python,
-                                                              self.install,
-                                                              self.script)
+        return "Configuration({!r}, {!r}, {!r}, {!r})".format(
+            self.language, self.python, self.install, self.script
+        )
 
     @property
     def language(self):
@@ -156,10 +151,13 @@ class Configuration(object):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-r", "--root_folder",
-                        # Default root path
-                        default=os.path.dirname(os.path.realpath(__file__)),
-                        help="Root folder")
+    parser.add_argument(
+        "-r",
+        "--root_folder",
+        # Default root path
+        default=os.path.dirname(os.path.realpath(__file__)),
+        help="Root folder",
+    )
     args = parser.parse_args()
 
     config = Configuration.import_cfg(folder=args.root_folder)

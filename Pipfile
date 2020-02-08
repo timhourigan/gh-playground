@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+black = "==19.10b0"
 pytest = "*"
 pytest-cov = "*"
 coveralls = "*"
