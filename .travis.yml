@@ -4,6 +4,7 @@ python:
 install:
   - pip install pipenv
   - pipenv sync
+  - pipenv shell
 script:
   - py.test
   - flake8
