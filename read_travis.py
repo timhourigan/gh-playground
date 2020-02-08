@@ -76,7 +76,7 @@ class Configuration(object):
 
         try:
             with open(configFilename) as f:
-                configData = yaml.load(f)
+                configData = yaml.load(f, Loader=yaml.FullLoader)
         except IOError as e:
             print("An issue occurred accessing {0} ({1})".format(configFilename,
                                                                  e.strerror))
