@@ -12,7 +12,7 @@ test: clean
 .PHONY: clean
 
 clean:
-	# Redundant, but clean anyway
 	@$(ECHO) "Deleting files"
-	@$(RM) -rf __pycache__
-	@$(RM) -rf *.pyc
+	@$(RM) -rf .coverage
+	@$(RM) -rf .pytest_cache
+	@$(RM) -rf htmlcov
