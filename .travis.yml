@@ -11,5 +11,6 @@ install:
 script:
   - pipenv run py.test
   - pipenv run flake8
+  - pipenv run black
 after_success:
   - pipenv run coveralls
