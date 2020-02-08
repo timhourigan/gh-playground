@@ -1,15 +1,15 @@
 language: python
 python:
   - "3.6"
+cache: pip
 env:
   global:
     - PIPENV_IGNORE_VIRTUALENVS=1
 install:
   - pip install pipenv
   - pipenv sync --dev
-  - pipenv shell
 script:
-  - py.test
-  - flake8
+  - pipenv run py.test
+  - pipenv run flake8
 after_success:
-  - coveralls
+  - pipenv run coveralls
