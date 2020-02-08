@@ -16,14 +16,18 @@ from read_travis import Configuration
 #
 ########################################################################
 
-UNKNOWN_LANGUAGE = 'Unknown'
+UNKNOWN_LANGUAGE = "Unknown"
 
-DEFAULT_LANGUAGE = 'python'
-DEFAULT_PYTHON_LIST = ['3.6']
-DEFAULT_INSTALL_LIST = ['pip install pipenv', 'pipenv sync --dev']
-DEFAULT_SCRIPT_LIST = ['pipenv run py.test', 'pipenv run flake8', 'pipenv run black --check .']
+DEFAULT_LANGUAGE = "python"
+DEFAULT_PYTHON_LIST = ["3.6"]
+DEFAULT_INSTALL_LIST = ["pip install pipenv", "pipenv sync --dev"]
+DEFAULT_SCRIPT_LIST = [
+    "pipenv run py.test",
+    "pipenv run flake8",
+    "pipenv run black --check .",
+]
 
-BAD_CONFIGURATION_FILE = '.bad.yml'
+BAD_CONFIGURATION_FILE = ".bad.yml"
 
 NOT_A_STRING = 12345
 NOT_A_LIST = "Not a list"
@@ -38,8 +42,9 @@ NOT_A_LIST = "Not a list"
 @pytest.fixture
 def empty_configuration():
     """Empty configuration object"""
-    return Configuration(language=UNKNOWN_LANGUAGE, python=list(),
-                         install=list(), script=list())
+    return Configuration(
+        language=UNKNOWN_LANGUAGE, python=list(), install=list(), script=list()
+    )
 
 
 @pytest.fixture
@@ -52,6 +57,7 @@ def default_configuration():
 def bad_configuration():
     """Bad configuration object"""
     return Configuration.import_cfg(filename=BAD_CONFIGURATION_FILE)
+
 
 ########################################################################
 #
@@ -95,11 +101,11 @@ def test_script_default(default_configuration):
 
 
 def test_repr_default(default_configuration):
-    assert repr(default_configuration) == \
-        'Configuration({!r}, {!r}, {!r}, {!r})'.format(DEFAULT_LANGUAGE,
-                                                       DEFAULT_PYTHON_LIST,
-                                                       DEFAULT_INSTALL_LIST,
-                                                       DEFAULT_SCRIPT_LIST)
+    assert repr(
+        default_configuration
+    ) == "Configuration({!r}, {!r}, {!r}, {!r})".format(
+        DEFAULT_LANGUAGE, DEFAULT_PYTHON_LIST, DEFAULT_INSTALL_LIST, DEFAULT_SCRIPT_LIST
+    )
 
 
 # Bad Configuration
