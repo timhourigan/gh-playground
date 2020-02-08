@@ -3,7 +3,7 @@
 
 ### Playground
 
-A playground repository for testing Github, [Travis CI](https://travis-ci.org) and [Coveralls](https://coveralls.io/).
+A playground repository for testing Github, [Travis CI](https://travis-ci.com) and [Coveralls](https://coveralls.io/).
 
 #### Python Testing
 
