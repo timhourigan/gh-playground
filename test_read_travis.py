@@ -21,7 +21,7 @@ UNKNOWN_LANGUAGE = 'Unknown'
 DEFAULT_LANGUAGE = 'python'
 DEFAULT_PYTHON_LIST = ['3.6']
 DEFAULT_INSTALL_LIST = ['pip install pipenv', 'pipenv sync --dev']
-DEFAULT_SCRIPT_LIST = ['pipenv run py.test', 'pipenv run flake8', 'pipenv run black']
+DEFAULT_SCRIPT_LIST = ['pipenv run py.test', 'pipenv run flake8', 'pipenv run black .']
 
 BAD_CONFIGURATION_FILE = '.bad.yml'
 
