@@ -11,40 +11,35 @@ The project contains a Python module (*read_travis.py*) with sample unit tests (
 
 The tests and [Flake8](https://flake8.readthedocs.io/en/latest/index.html) are executed by Travis CI, with code coverage reported using Coveralls.
 
-| File                | Content                                                                        |
-|:--------------------|:-------------------------------------------------------------------------------|
-| .coveragerc         | Contains a list of ignores (omits, excludes) for the code coverage check.      |
-| .gitignore          | git ignore list.                                                               |
-| .travis.yml         | Travis CI configuration.                                                       |
-| conftest.py         | Currently unused, could contain common test fixtures or imports.               |
-| Makefile            | Makefile to execute tests.                                                     |
-| LICENSE             | Repository license.                                                            |
-| read_travis.py      | Dummy Python module. Creates an object based on the contents of *.travis.yml*. |
-| README.md           | This file.                                                                     |
-| requirements.txt    | Python requirements file, containing a list of the needed Python packages.     |
-| setup.cfg           | Contains pytest and flake8 default settings.                                   |
-| test_read_travis.py | Sample unit tests.                                                             |
+| File                | Content                                                                           |
+|:--------------------|:----------------------------------------------------------------------------------|
+| .coveragerc         | Contains a list of ignores (omits, excludes) for the code coverage check.         |
+| .gitignore          | git ignore list.                                                                  |
+| .travis.yml         | Travis CI configuration.                                                          |
+| conftest.py         | Currently unused, could contain common test fixtures or imports.                  |
+| Makefile            | Makefile to execute tests.                                                        |
+| LICENSE             | Repository license.                                                               |
+| read_travis.py      | Dummy Python module. Creates an object based on the contents of *.travis.yml*.    |
+| README.md           | This file.                                                                        |
+| Pipfile             | Python pipenv requirements file, containing a list of the needed Python packages. |
+| Pipfile.lock        | Python pipenv lock file.                                                          |
+| setup.cfg           | Contains pytest and flake8 default settings.                                      |
+| test_read_travis.py | Sample unit tests.                                                                |
 
-#### Usage - Virtualenv on Ubuntu/Debian
+#### Usage - Pipenv on Ubuntu/Debian
 
 ```bash
-# Install virtualenv locally
-$ sudo apt-get install virtualenv
+# Install pip and pipenv locally
+$ sudo apt install python3-pip
+# This assumes PATH includes ~/.local/bin
+$ pip install --user pipenv
 
-# Create virtual environment
-$ virtualenv env
-
-# Activate virtual env
-$ source env/bin/activate
-
-# Install dependencies
-$ (env) pip install -r requirements.txt
+# Setup the environment
+$ pipenv sync --dev
+$ pipenv shell
 
 # Run tests and coverage locally
 $ make test
-
-# Exit virtual environment
-$ deactivate
 ```
 
 #### Continuous Integration
