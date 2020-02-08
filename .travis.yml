@@ -3,10 +3,9 @@ python:
   - "3.6"
 install:
   - pip install pipenv
-  - pipenv sync
-  - pipenv shell
+  - pipenv sync --dev
 script:
-  - py.test
-  - flake8
+  - pipenv run py.test
+  - pipenv run flake8
 after_success:
-  - coveralls
+  - pipenv run coveralls

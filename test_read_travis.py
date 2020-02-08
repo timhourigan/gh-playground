@@ -19,7 +19,7 @@ from read_travis import Configuration
 UNKNOWN_LANGUAGE = 'Unknown'
 
 DEFAULT_LANGUAGE = 'python'
-DEFAULT_PYTHON_LIST = ['2.7']
+DEFAULT_PYTHON_LIST = ['3.6']
 DEFAULT_INSTALL_LIST = ['pip install -r requirements.txt']
 DEFAULT_SCRIPT_LIST = ['py.test', 'flake8']
 
